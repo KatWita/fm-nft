@@ -46,18 +46,16 @@ footer {
 }
 
 .container {
-	display: flex;
 	justify-content: center;
-	align-items: center;
 	min-height: 100vh;
 	padding: 0 0.8em;
 }
 
 .card {
-	background-color: var(--card-bg);
-	border-radius: 15px;
 	padding: 1.2em;
 	max-width: 345px;
+	background-color: var(--card-bg);
+	border-radius: 15px;
 	-webkit-box-shadow: 0px 7px 24px -5px rgba(10, 18, 31, 1);
 	-moz-box-shadow: 0px 7px 24px -5px rgba(10, 18, 31, 1);
 	box-shadow: 0px 7px 24px -5px rgba(10, 18, 31, 1);
@@ -69,28 +67,29 @@ footer {
 }
 
 .card_img-eq {
-	border-radius: 8px;
 	width: 100%;
 	height: auto;
+	border-radius: 8px;
+}
+
+.card__img::before,
+.card__img::after {
+	position: absolute;
+	opacity: 0;
+	transition: opacity 1.5s;
 }
 
 .card__img::before {
-	opacity: 0;
 	content: '';
-	position: absolute;
 	width: 100%;
 	height: 98.5%;
 	border-radius: 8px;
-	transition: opacity 1.5s;
 	background-color: rgba(0, 255, 247, 0.377);
 }
 .card__img::after {
-	opacity: 0;
 	content: url(../images/icon-view.svg);
-	position: absolute;
 	top: 42%;
 	left: 42%;
-	transition: opacity 1.5s;
 }
 
 .card__img:hover::before,
@@ -104,9 +103,17 @@ footer {
 }
 
 .card__heading {
+	display: inline-block;
 	margin-top: 0.8em;
-	font-size: 2.5rem;
+	font-size: 2.2rem;
 	font-weight: bold;
+	transition: color 0.3s;
+	cursor: pointer;
+}
+
+.card__heading:hover,
+.card__name:hover {
+	color: var(--can);
 }
 
 .card__text,
@@ -116,7 +123,7 @@ footer {
 }
 
 .card__text {
-	margin: 0.8em 0;
+	margin: 0.9em 0 1.4em;
 	line-height: 28px;
 }
 
@@ -136,6 +143,12 @@ footer {
 
 .card__eth-img {
 	width: 12px;
+}
+
+.card__text-eth,
+.card__text-days,
+.card__text-footer {
+	font-size: 1.6rem;
 }
 
 .card__text-eth {
